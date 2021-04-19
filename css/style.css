@@ -56,3 +56,6 @@ footer {
 }
 
 /*----end footer----*/
+.hide {
+  display: none;
+}
