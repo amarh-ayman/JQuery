@@ -1,0 +1,24 @@
+/*--------start header element----*/
+header h1,
+select {
+  float: left;
+  margin-top: 40px;
+}
+header h1 {
+  margin-left: 500px;
+  font-size: 60px;
+}
+header select {
+  float: right;
+  margin-right: 70px;
+}
+/*-------- end header element----*/
+
+/*-----start main----*/
+main img {
+  width: 60%;
+  height: 200px;
+  border: 7px ridge rgb(201, 198, 198);
+  border-radius: 20%;
+}
+/*----end main----*/
