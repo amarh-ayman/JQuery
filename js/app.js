@@ -10,10 +10,10 @@ function Image(url, title, description, keyword, horns) {
 
 Image.prototype.render = function () {
   let $photo = $('#photo-template').clone(); ///array
-  $('main').append($photo);
   $photo.find('h2').text(this.title);
   $photo.find('img').attr('src', this.img);
   $photo.find('p').text(this.description);
+  $('main').append($photo);
 };
 
 Image.readJson = () => {
@@ -37,8 +37,16 @@ function doStuff(data) {
 
 $(() => Image.readJson());
 /*--------------filter----------------*/
-Image.prototype.filter = function () {
-  let $keyword = $('select').clone();
-  $('header').append($keyword);
-  $keyword.find('option').text(this.title);
+let filterr = function () {
+  let a = 3;
+  while (a > 0) {
+    let $keyword = $('.option').clone();
+    $keyword.text(a);
+    $keyword.removeClass('option');
+    $('select').append($keyword);
+
+    console.log($keyword + '   ' + a);
+    a--;
+  }
 };
+filterr();
