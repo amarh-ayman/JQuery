@@ -1,6 +1,5 @@
 header {
   height: 100px;
-  font-family: 'Indie Flower', cursive;
 }
 /*----start main----*/
 main {
@@ -21,9 +20,8 @@ footer {
   height: 70px;
   display: inline-block;
   text-align: center;
-  padding-top: 20px;
+  line-height: 40px;
   font-size: 40px;
-  font-family: 'Indie Flower', cursive;
 }
 
 /*----end footer----*/
