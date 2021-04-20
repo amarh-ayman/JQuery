@@ -26,7 +26,16 @@ button {
   padding: 10px;
   box-shadow: 20px 20px 10px gray;
 }
-
+#photo-template:hover {
+  width: 50%;
+  /* height: 400px; */
+  font-size: 50px;
+  position: fixed;
+  top: 20%;
+  background-color: rgb(240, 248, 255);
+  box-shadow: 200px 100px 1000px gray;
+  z-index: 1;
+}
 #photo-template h2 {
   font-size: 20px;
   font-weight: bold;
