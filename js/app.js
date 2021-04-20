@@ -28,7 +28,7 @@ Image.readJson = () => {
     datatype: 'json',
   };
 
-  $.ajax('./data/page-1.json', ajaxSetting).then(doStuff);
+  $.ajax('data/page-1.json', ajaxSetting).then(doStuff);
 };
 
 function doStuff(data) {
