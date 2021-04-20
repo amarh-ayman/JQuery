@@ -1,24 +1,38 @@
-/*--------start header element----*/
-header h1,
-select {
-  float: left;
-  margin-top: 40px;
-}
 header h1 {
-  margin-left: 500px;
   font-size: 60px;
+  cursor: pointer;
 }
-header select {
-  float: right;
-  margin-right: 70px;
+header select,
+header button {
+  padding: 5px 15px;
 }
-/*-------- end header element----*/
+button {
+  background-color: rgb(143, 142, 158);
+  color: aliceblue;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+#images_section_main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+#photo-template {
+  width: 27%;
+  margin: 30px 1.5%;
+  text-align: center;
+  border: 3px solid #ddd;
+  padding: 10px;
+  box-shadow: 20px 20px 10px gray;
+}
 
-/*-----start main----*/
-main img {
+#photo-template h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+#photo-template img {
   width: 60%;
   height: 200px;
-  border: 7px ridge rgb(201, 198, 198);
-  border-radius: 20%;
+  margin: 30px 0px;
 }
-/*----end main----*/
