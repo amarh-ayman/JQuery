@@ -28,7 +28,7 @@ Image.readJson = () => {
     datatype: 'json',
   };
 
-  $.ajax('data/page-1.json', ajaxSetting).then(doStuff);
+  $.ajax('./data/page-1.json', ajaxSetting).then(doStuff);
 };
 
 function doStuff(data) {
@@ -43,7 +43,7 @@ function doStuff(data) {
   // console.log(arr[0]);
 }
 
-$(() => Image.readJson());
+Image.readJson();
 /*--------------filter----------------*/
 function filterr() {
   $('select').on('change', filterFunction);
