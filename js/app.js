@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 /*-----read from json file---- */
 let keyWords = [];
 let dataArray = [];
@@ -13,24 +13,24 @@ function Image(item) {
 }
 
 Image.prototype.render = function () {
-  let template = $("#imageTemplate").html();
+  let template = $('#imageTemplate').html();
   let imageMergedTemplate = Mustache.render(template, this);
-  $("#images_section_main").append(imageMergedTemplate);
+  $('#images_section_main').append(imageMergedTemplate);
 };
 
 function readJson(number) {
   const ajaxSetting = {
-    method: "get",
-    datatype: "json",
+    method: 'get',
+    datatype: 'json',
   };
   if (number === 1) {
     dataArray = [];
-    $("#images_section_main").children().remove();
+    $('#images_section_main').children().remove();
     $.ajax(`data/page-1.json`, ajaxSetting).then(doStuff);
   }
   if (number === 2) {
     dataArray = [];
-    $("#images_section_main").children().remove();
+    $('#images_section_main').children().remove();
     $.ajax(`data/page-2.json`, ajaxSetting).then(doStuff);
   }
 }
@@ -40,7 +40,7 @@ function doStuff(HornData) {
   keyWords = [];
   sort(HornData);
   // console.log(dataArray);
-  HornData.forEach((item) => {
+  HornData.forEach(item => {
     let newImage = new Image(item);
     newImage.render();
 
@@ -54,13 +54,13 @@ function doStuff(HornData) {
 
 /*--------------filter----------------*/
 function renderKeywords() {
-  $("#filter").children().remove();
-  let template = $("#filterTemplate").html();
-  $("#filter").append("<option value='default'>Default</option>");
-  keyWords.forEach((item) => {
+  $('#filter').children().remove();
+  let template = $('#filterTemplate').html();
+  $('#filter').append("<option value='default'>Default</option>");
+  keyWords.forEach(item => {
     let x = { y: item };
     let filterMergedTemplate = Mustache.render(template, x);
-    $("#filter").append(filterMergedTemplate);
+    $('#filter').append(filterMergedTemplate);
   });
 }
 
@@ -69,16 +69,16 @@ function filterFunction() {
   let select = $(this).val();
   selectedFilter = select;
 
-  if (select == "default") {
-    $("div").show();
+  if (select == 'default') {
+    $('div').show();
   } else {
-    $("div").hide();
+    $('div').hide();
     $(`.${select}`).show();
   }
 }
 
 // events
-$("#filter").on("change", filterFunction);
+$('#filter').on('change', filterFunction);
 
 ///////// buttons
 function page1Handler() {
@@ -88,13 +88,13 @@ function page2Handler() {
   readJson(2);
 }
 
-$("#page1").click(page1Handler);
-$("#page2").on("click", page2Handler);
+$('#page1').click(page1Handler);
+$('#page2').on('click', page2Handler);
 
 //////////// sort
 function sortHandler() {
   let select = $(this).val();
-  if (select === "title") {
+  if (select === 'title') {
     dataArray.sort((a, b) => {
       let aTitle = a.title;
       let bTitle = b.title;
@@ -106,7 +106,7 @@ function sortHandler() {
       }
     });
   }
-  if (select === "horns") {
+  if (select === 'horns') {
     dataArray.sort((a, b) => {
       let aHorns = a.horns;
       let bHorns = b.horns;
@@ -118,22 +118,22 @@ function sortHandler() {
       }
     });
   }
-  $("#images_section_main").children().remove();
-  dataArray.forEach((element) => {
+  $('#images_section_main').children().remove();
+  dataArray.forEach(element => {
     element.render();
   });
   if (selectedFilter) {
-    if (selectedFilter === "default") {
-      $("div").show();
+    if (selectedFilter === 'default') {
+      $('div').show();
     } else {
-      $("div").hide();
+      $('div').hide();
       console.log(selectedFilter);
       $(`.${selectedFilter}`).show();
     }
   }
 }
 
-$("#sort").on("change", sortHandler);
+$('#sort').on('change', sortHandler);
 function sort(dataArray) {
   dataArray.sort((a, b) => {
     let aTitle = a.title;
@@ -147,6 +147,6 @@ function sort(dataArray) {
   });
 }
 
-$(".heading").click(function (params) {
+$('.heading').click(function () {
   location.reload();
 });
